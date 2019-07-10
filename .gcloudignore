@@ -1,0 +1,6 @@
+.git/
+.pytest_cache/
+.vscode/
+tests/
+test-results/
+Pipfile.lock

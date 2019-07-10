@@ -1,0 +1,252 @@
+{
+   "pullrequest": {
+      "rendered": {
+         "reason": {
+            "raw": "just a test",
+            "markup": "markdown",
+            "html": "<p>just a test</p>",
+            "type": "rendered"
+         },
+         "description": {
+            "raw": "",
+            "markup": "markdown",
+            "html": "",
+            "type": "rendered"
+         },
+         "title": {
+            "raw": "Test",
+            "markup": "markdown",
+            "html": "<p>Test</p>",
+            "type": "rendered"
+         }
+      },
+      "type": "pullrequest",
+      "description": "",
+      "links": {
+         "decline": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/decline"
+         },
+         "commits": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/commits"
+         },
+         "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40"
+         },
+         "comments": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/comments"
+         },
+         "merge": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/merge"
+         },
+         "html": {
+            "href": "https://bitbucket.org/ciandt_it/google-pci-demo/pull-requests/40"
+         },
+         "activity": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/activity"
+         },
+         "diff": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/diff"
+         },
+         "approve": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/approve"
+         },
+         "statuses": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/pullrequests/40/statuses"
+         }
+      },
+      "title": "Test",
+      "close_source_branch": false,
+      "reviewers": [],
+      "id": 40,
+      "destination": {
+         "commit": {
+            "hash": "0c8e1730da51",
+            "type": "commit",
+            "links": {
+               "self": {
+                  "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/commit/0c8e1730da51"
+               },
+               "html": {
+                  "href": "https://bitbucket.org/ciandt_it/google-pci-demo/commits/0c8e1730da51"
+               }
+            }
+         },
+         "repository": {
+            "links": {
+               "self": {
+                  "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo"
+               },
+               "html": {
+                  "href": "https://bitbucket.org/ciandt_it/google-pci-demo"
+               },
+               "avatar": {
+                  "href": "https://bytebucket.org/ravatar/%7B0cb51237-094d-4e8f-a3af-e5c3f33453e0%7D?ts=python"
+               }
+            },
+            "type": "repository",
+            "name": "google-pci-demo",
+            "full_name": "ciandt_it/google-pci-demo",
+            "uuid": "{0cb51237-094d-4e8f-a3af-e5c3f33453e0}"
+         },
+         "branch": {
+            "name": "develop"
+         }
+      },
+      "created_on": "2019-07-10T20:23:28.689012+00:00",
+      "summary": {
+         "raw": "",
+         "markup": "markdown",
+         "html": "",
+         "type": "rendered"
+      },
+      "source": {
+         "commit": {
+            "hash": "8ccd09b58ef1",
+            "type": "commit",
+            "links": {
+               "self": {
+                  "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo/commit/8ccd09b58ef1"
+               },
+               "html": {
+                  "href": "https://bitbucket.org/ciandt_it/google-pci-demo/commits/8ccd09b58ef1"
+               }
+            }
+         },
+         "repository": {
+            "links": {
+               "self": {
+                  "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo"
+               },
+               "html": {
+                  "href": "https://bitbucket.org/ciandt_it/google-pci-demo"
+               },
+               "avatar": {
+                  "href": "https://bytebucket.org/ravatar/%7B0cb51237-094d-4e8f-a3af-e5c3f33453e0%7D?ts=python"
+               }
+            },
+            "type": "repository",
+            "name": "google-pci-demo",
+            "full_name": "ciandt_it/google-pci-demo",
+            "uuid": "{0cb51237-094d-4e8f-a3af-e5c3f33453e0}"
+         },
+         "branch": {
+            "name": "feature/tests-chat"
+         }
+      },
+      "comment_count": 0,
+      "state": "DECLINED",
+      "task_count": 0,
+      "participants": [],
+      "reason": "just a test",
+      "updated_on": "2019-07-10T20:23:44.829304+00:00",
+      "author": {
+         "display_name": "A. Kieras",
+         "account_id": "557058:65ad0864-56aa-43f8-ae37-3bbc310b6908",
+         "links": {
+            "self": {
+               "href": "https://api.bitbucket.org/2.0/users/%7B861c54f4-2ebd-4e4c-94f5-9fb37d04a1da%7D"
+            },
+            "html": {
+               "href": "https://bitbucket.org/%7B861c54f4-2ebd-4e4c-94f5-9fb37d04a1da%7D/"
+            },
+            "avatar": {
+               "href": "https://avatar-cdn.atlassian.com/557058%3A65ad0864-56aa-43f8-ae37-3bbc310b6908?by=id&sg=pBijK5Q0s41bCH22kaf%2FNQC8Xco%3D&d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-0.png"
+            }
+         },
+         "nickname": "Alessandro Kieras",
+         "type": "user",
+         "uuid": "{861c54f4-2ebd-4e4c-94f5-9fb37d04a1da}"
+      },
+      "merge_commit": null,
+      "closed_by": {
+         "display_name": "A. Kieras",
+         "account_id": "557058:65ad0864-56aa-43f8-ae37-3bbc310b6908",
+         "links": {
+            "self": {
+               "href": "https://api.bitbucket.org/2.0/users/%7B861c54f4-2ebd-4e4c-94f5-9fb37d04a1da%7D"
+            },
+            "html": {
+               "href": "https://bitbucket.org/%7B861c54f4-2ebd-4e4c-94f5-9fb37d04a1da%7D/"
+            },
+            "avatar": {
+               "href": "https://avatar-cdn.atlassian.com/557058%3A65ad0864-56aa-43f8-ae37-3bbc310b6908?by=id&sg=pBijK5Q0s41bCH22kaf%2FNQC8Xco%3D&d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-0.png"
+            }
+         },
+         "nickname": "Alessandro Kieras",
+         "type": "user",
+         "uuid": "{861c54f4-2ebd-4e4c-94f5-9fb37d04a1da}"
+      }
+   },
+   "repository": {
+      "scm": "git",
+      "website": "",
+      "name": "google-pci-demo",
+      "links": {
+         "self": {
+            "href": "https://api.bitbucket.org/2.0/repositories/ciandt_it/google-pci-demo"
+         },
+         "html": {
+            "href": "https://bitbucket.org/ciandt_it/google-pci-demo"
+         },
+         "avatar": {
+            "href": "https://bytebucket.org/ravatar/%7B0cb51237-094d-4e8f-a3af-e5c3f33453e0%7D?ts=python"
+         }
+      },
+      "project": {
+         "key": "PROJ",
+         "type": "project",
+         "uuid": "{fd21f5f9-0223-4846-b9fc-8cb605db8b50}",
+         "links": {
+            "self": {
+               "href": "https://api.bitbucket.org/2.0/teams/ciandt_it/projects/PROJ"
+            },
+            "html": {
+               "href": "https://bitbucket.org/account/user/ciandt_it/projects/PROJ"
+            },
+            "avatar": {
+               "href": "https://bitbucket.org/account/user/ciandt_it/projects/PROJ/avatar/32"
+            }
+         },
+         "name": "Untitled-project"
+      },
+      "full_name": "ciandt_it/google-pci-demo",
+      "owner": {
+         "username": "ciandt_it",
+         "display_name": "Ci&T",
+         "type": "team",
+         "uuid": "{6d44b21b-d0d9-498a-8027-5dc7f534ddb1}",
+         "links": {
+            "self": {
+               "href": "https://api.bitbucket.org/2.0/teams/%7B6d44b21b-d0d9-498a-8027-5dc7f534ddb1%7D"
+            },
+            "html": {
+               "href": "https://bitbucket.org/%7B6d44b21b-d0d9-498a-8027-5dc7f534ddb1%7D/"
+            },
+            "avatar": {
+               "href": "https://bitbucket.org/account/ciandt_it/avatar/"
+            }
+         }
+      },
+      "type": "repository",
+      "is_private": true,
+      "uuid": "{0cb51237-094d-4e8f-a3af-e5c3f33453e0}"
+   },
+   "actor": {
+      "display_name": "A. Kieras",
+      "account_id": "557058:65ad0864-56aa-43f8-ae37-3bbc310b6908",
+      "links": {
+         "self": {
+            "href": "https://api.bitbucket.org/2.0/users/%7B861c54f4-2ebd-4e4c-94f5-9fb37d04a1da%7D"
+         },
+         "html": {
+            "href": "https://bitbucket.org/%7B861c54f4-2ebd-4e4c-94f5-9fb37d04a1da%7D/"
+         },
+         "avatar": {
+            "href": "https://avatar-cdn.atlassian.com/557058%3A65ad0864-56aa-43f8-ae37-3bbc310b6908?by=id&sg=pBijK5Q0s41bCH22kaf%2FNQC8Xco%3D&d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FAK-0.png"
+         }
+      },
+      "nickname": "Alessandro Kieras",
+      "type": "user",
+      "uuid": "{861c54f4-2ebd-4e4c-94f5-9fb37d04a1da}"
+   }
+}
