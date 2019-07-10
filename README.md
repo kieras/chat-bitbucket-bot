@@ -5,7 +5,7 @@ It is a Google Hangout Chats Bitbucket Bot. :-)
 ## Run unit tests
 
 ```bash
-pipenv run python -m pytest --junitxml=test-results/pytest/report.xml -vvs tests
+pipenv run python -m pytest --junitxml=test-results/pytest/report.xml -vvs tests --log-cli-level WARNING
 ```
 
 ## Deploy
