@@ -95,7 +95,7 @@ def test_commit_status_updated_successful(app):
     }
 
     data = load_json_file('./tests/fixtures/commit-status-updated-successful.json')
-    expected_response = load_json_file('./tests/responses/unknown.json')
+    expected_response = load_json_file('./tests/responses/commit-status-updated-successful.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
         response = json.loads(res)
@@ -114,7 +114,7 @@ def test_commit_status_updated_failed(app):
     }
 
     data = load_json_file('./tests/fixtures/commit-status-updated-failed.json')
-    expected_response = load_json_file('./tests/responses/unknown.json')
+    expected_response = load_json_file('./tests/responses/commit-status-updated-failed.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
         response = json.loads(res)
