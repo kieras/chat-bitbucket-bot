@@ -2,7 +2,10 @@ import flask
 import pytest
 import json
 
+from werkzeug.exceptions import BadRequest
+
 from main import main
+from util import load_json_file
 
 
 @pytest.fixture(scope="module")
@@ -10,9 +13,14 @@ def app():
     return flask.Flask(__name__)
 
 
-def load_fixture(filename):
-    with open(filename, encoding='utf-8') as file:
-        return json.load(file)
+def test_not_bitbucket_event(app):
+    headers = {
+        'User-Agent': 'Github'
+    }
+
+    with app.test_request_context(headers=headers):
+        with pytest.raises(BadRequest):
+                res = main(flask.request)
 
 
 def test_pull_request_created(app):
@@ -26,10 +34,12 @@ def test_pull_request_created(app):
         'Content-Type': 'application/json'
     }
 
-    data = load_fixture('./tests/fixtures/pullrequest-created.json')
+    data = load_json_file('./tests/fixtures/pullrequest-created.json')
+    expected_response = load_json_file('./tests/responses/unknown.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
-        assert 'pullrequest' in res
+        response = json.loads(res)
+        assert expected_response == response
 
 
 def test_pull_request_fulfilled(app):
@@ -43,10 +53,12 @@ def test_pull_request_fulfilled(app):
         'Content-Type': 'application/json'
     }
 
-    data = load_fixture('./tests/fixtures/pullrequest-fulfilled.json')
+    data = load_json_file('./tests/fixtures/pullrequest-fulfilled.json')
+    expected_response = load_json_file('./tests/responses/unknown.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
-        assert 'pullrequest' in res
+        response = json.loads(res)
+        assert expected_response == response
 
 
 def test_pull_request_rejected(app):
@@ -60,10 +72,12 @@ def test_pull_request_rejected(app):
         'Content-Type': 'application/json'
     }
 
-    data = load_fixture('./tests/fixtures/pullrequest-rejected.json')
+    data = load_json_file('./tests/fixtures/pullrequest-rejected.json')
+    expected_response = load_json_file('./tests/responses/unknown.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
-        assert 'pullrequest' in res
+        response = json.loads(res)
+        assert expected_response == response
 
 
 def test_commit_status_updated_successful(app):
@@ -77,10 +91,12 @@ def test_commit_status_updated_successful(app):
         'Content-Type': 'application/json'
     }
 
-    data = load_fixture('./tests/fixtures/commit-status-updated-successful.json')
+    data = load_json_file('./tests/fixtures/commit-status-updated-successful.json')
+    expected_response = load_json_file('./tests/responses/unknown.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
-        assert 'SUCCESSFUL' in res
+        response = json.loads(res)
+        assert expected_response == response
 
 
 def test_commit_status_updated_failed(app):
@@ -94,7 +110,9 @@ def test_commit_status_updated_failed(app):
         'Content-Type': 'application/json'
     }
 
-    data = load_fixture('./tests/fixtures/commit-status-updated-failed.json')
+    data = load_json_file('./tests/fixtures/commit-status-updated-failed.json')
+    expected_response = load_json_file('./tests/responses/unknown.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
-        assert 'FAILED' in res
+        response = json.loads(res)
+        assert expected_response == response

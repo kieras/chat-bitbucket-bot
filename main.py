@@ -11,6 +11,7 @@ setup_logging()
 logger = logging.getLogger(__name__)
 
 from config import CONFIG
+from bitbucket import handle_bitbucket_event
 
 
 def main(request):
@@ -22,16 +23,10 @@ def main(request):
     
     logger.info('Bot %s is alive!', bot_name)
 
-
-    content_type = request.headers['content-type']
-    if content_type == 'application/json':
-        bitbucket_event = request.get_json(silent=True)
+    if request.headers.get('User-Agent') == 'Bitbucket-Webhooks/2.0':
+        return handle_bitbucket_event(request)
     else:
-        raise ValueError("Unknown content type: {}".format(content_type))
-
-    r = json.dumps(bitbucket_event, indent=2)
-    logger.info(r)
-    return r
+        return abort(400)
 
 
 if __name__ == '__main__':
