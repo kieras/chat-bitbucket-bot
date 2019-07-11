@@ -15,7 +15,21 @@ def handle_bitbucket_event(request):
 
 
 def handle_pull_request(event, headers):
-    return handle_unknown(event, headers)
+    pr_id = event.get('pullrequest').get('id')
+    pr_title = event.get('pullrequest').get('title')
+    pr_link = event.get('pullrequest').get('links').get('html').get('href')
+    pr_state = event.get('pullrequest').get('state')
+    pr_actor = event.get('actor').get('display_name')
+    pr_source_branch = event.get('pullrequest').get('source').get('branch').get('name')
+    pr_destination_branch = event.get('pullrequest').get('destination').get('branch').get('name')
+
+    text = 'PR#{} {} {} {} by {}. {}->{}'.format(pr_id, pr_title, pr_link, pr_state, pr_actor, pr_source_branch, pr_destination_branch)
+
+    response = {
+        'text': text
+    }
+
+    return json.dumps(response, indent=2)
 
 
 def handle_commit_status(event, headers):

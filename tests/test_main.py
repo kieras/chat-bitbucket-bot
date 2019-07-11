@@ -35,7 +35,8 @@ def test_pull_request_created(app):
     }
 
     data = load_json_file('./tests/fixtures/pullrequest-created.json')
-    expected_response = load_json_file('./tests/responses/unknown.json')
+    expected_response = load_json_file(
+        './tests/responses/pullrequest-created.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
         response = json.loads(res)
@@ -54,7 +55,8 @@ def test_pull_request_fulfilled(app):
     }
 
     data = load_json_file('./tests/fixtures/pullrequest-fulfilled.json')
-    expected_response = load_json_file('./tests/responses/unknown.json')
+    expected_response = load_json_file(
+        './tests/responses/pullrequest-fulfilled.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
         response = json.loads(res)
@@ -73,7 +75,8 @@ def test_pull_request_rejected(app):
     }
 
     data = load_json_file('./tests/fixtures/pullrequest-rejected.json')
-    expected_response = load_json_file('./tests/responses/unknown.json')
+    expected_response = load_json_file(
+        './tests/responses/pullrequest-rejected.json')
     with app.test_request_context(method='POST', json=data, headers=headers):
         res = main(flask.request)
         response = json.loads(res)

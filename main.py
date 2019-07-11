@@ -24,7 +24,8 @@ def main(request):
     logger.info('Bot %s is alive!', bot_name)
 
     if request.headers.get('User-Agent') == 'Bitbucket-Webhooks/2.0':
-        return handle_bitbucket_event(request)
+        response = handle_bitbucket_event(request)
+        return response
     else:
         return abort(400)
 
