@@ -26,7 +26,10 @@ def main(request):
     logger.info('Bot %s is alive!', bot_name)
 
     if request.headers.get('User-Agent') == 'Bitbucket-Webhooks/2.0':
-        chat_response_payload = handle_bitbucket_event(request)
+        event = request.get_json(silent=True)
+        headers = request.headers
+
+        chat_response_payload = handle_bitbucket_event(event, headers)
         
         # Skip successful commits for now.
         if 'is *SUCCESSFUL*.' in chat_response_payload:

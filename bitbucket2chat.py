@@ -1,10 +1,7 @@
 import json
 
 
-def handle_bitbucket_event(request):
-    event = request.get_json(silent=True)
-    headers = request.headers
-
+def handle_bitbucket_event(event, headers):
     event_key = headers.get('X-Event-Key')
     if 'pullrequest:' in event_key:
         response = handle_pull_request(event, headers)
