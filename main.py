@@ -27,6 +27,11 @@ def main(request):
 
     if request.headers.get('User-Agent') == 'Bitbucket-Webhooks/2.0':
         chat_response_payload = handle_bitbucket_event(request)
+        
+        # Skip successful commits for now.
+        if 'is *SUCCESSFUL*.' in chat_response_payload:
+            return '200'
+        
         response = send_to_chat(chat_response_payload)
         logger.info('Response from chat. Code=%s, Text=%s', response.status_code, response.text)
         return '{} {}'.format(response.status_code, response.text)

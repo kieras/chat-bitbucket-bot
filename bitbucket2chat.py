@@ -25,7 +25,8 @@ def handle_pull_request(event, headers):
     pr_source_branch = event.get('pullrequest').get('source').get('branch').get('name')
     pr_destination_branch = event.get('pullrequest').get('destination').get('branch').get('name')
 
-    text = 'PR#{} {} {} {} by {}. {}->{}'.format(pr_id, pr_title, pr_link, pr_state, pr_actor, pr_source_branch, pr_destination_branch)
+    text = '<{}|PR#{} {}> from `{}` to `{}`\n*{}* by _{}_.'.format(
+        pr_link, pr_id, pr_title, pr_source_branch, pr_destination_branch, pr_state, pr_actor)
 
     response = {
         'text': text
@@ -39,7 +40,7 @@ def handle_commit_status(event, headers):
     cs_state = event.get('commit_status').get('state')
     cs_link = event.get('commit_status').get('url')
 
-    text = '{} {} {}.'.format(cs_name, cs_link, cs_state)
+    text = '<{}|{}> is *{}*.'.format(cs_link, cs_name, cs_state)
 
     response = {
         'text': text
@@ -50,6 +51,6 @@ def handle_commit_status(event, headers):
 
 def handle_unknown(event, headers):
     response = {
-        'text': 'I know nothing about this kind of event.'
+        'text': 'I\'ve received an event that I don\'t know how to handle.'
     }
     return response
