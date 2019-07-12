@@ -1,6 +1,8 @@
+import os
 import logging
 import logging.config
 import json
+import requests
 
 from flask import escape
 from flask import abort
@@ -11,7 +13,7 @@ setup_logging()
 logger = logging.getLogger(__name__)
 
 from config import CONFIG
-from bitbucket import handle_bitbucket_event
+from bitbucket2chat import handle_bitbucket_event
 
 
 def main(request):
@@ -24,10 +26,22 @@ def main(request):
     logger.info('Bot %s is alive!', bot_name)
 
     if request.headers.get('User-Agent') == 'Bitbucket-Webhooks/2.0':
-        response = handle_bitbucket_event(request)
-        return response
+        chat_response_payload = handle_bitbucket_event(request)
+        response = send_to_chat(chat_response_payload)
+        logger.info('Response from chat. Code=%s, Text=%s', response.status_code, response.text)
+        return '{} {}'.format(response.status_code, response.text)
     else:
         return abort(400)
+
+def send_to_chat(chat_response_payload):
+    webhook_url = os.getenv('CHAT_WEBHOOK_URL')
+
+    message_headers = {'Content-Type': 'application/json; charset=UTF-8'}
+
+    response = requests.post(
+        webhook_url, data=chat_response_payload, headers=message_headers)
+
+    return response
 
 
 if __name__ == '__main__':

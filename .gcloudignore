@@ -1,6 +1,12 @@
 .git/
 .pytest_cache/
 .vscode/
+.DS_Store
+.gcloudignore
+.gitignore
+.gitattributes
+.whitesource
 tests/
 test-results/
 Pipfile.lock
+Pipfile

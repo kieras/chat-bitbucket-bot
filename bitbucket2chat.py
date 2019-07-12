@@ -8,7 +8,7 @@ def handle_bitbucket_event(request):
     event_key = headers.get('X-Event-Key')
     if 'pullrequest:' in event_key:
         response = handle_pull_request(event, headers)
-    elif 'repo: commit_status_' in event_key:
+    elif 'repo:commit_status_' in event_key:
         response = handle_commit_status(event, headers)
     else:
         response = handle_unknown(event, headers)

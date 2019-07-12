@@ -9,6 +9,7 @@ google-api-python-client = "==1.7.8"
 google-cloud-error-reporting = "==0.31.0"
 oauth2client = "==3.0.0"
 Flask = "==1.0.2"
+requests = "==2.22.0"
 
 [requires]
 python_version = "3.7"
