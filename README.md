@@ -1,6 +1,9 @@
-# Google Hangout Chats Bitbucket Bot
+# Minimalist Google Hangout Chats Bitbucket Bot
 
-It is a Google Hangout Chats Bitbucket Bot. :-)
+It is a **Minimalist** Google Hangout Chats Bitbucket Bot. :-)
+
+The **minimalist** part is very important. We don't want a bloated fully featured bot, we want just the
+minimum necessary so that our teams can have decent notifications and can act on important events.
 
 ## Setup virtual environment
 
