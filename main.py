@@ -25,6 +25,8 @@ def main(request):
     
     logger.info('Bot %s is alive!', bot_name)
 
+    logger.info('This request came from: %s', request.remote_addr)
+
     if request.headers.get('User-Agent') == 'Bitbucket-Webhooks/2.0':
         event = request.get_json(silent=True)
         headers = request.headers
