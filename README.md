@@ -1,5 +1,7 @@
 # Minimalist Google Hangout Chats Bitbucket Bot
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7b2d056fd55a46d1bf810fa0bb9a5e3a)](https://www.codacy.com/manual/kieras/chat-bitbucket-bot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kieras/chat-bitbucket-bot&amp;utm_campaign=Badge_Grade)
+
 It is a **Minimalist** Google Hangout Chats Bitbucket Bot. :-)
 
 The **minimalist** part is very important. We don't want a bloated fully featured bot, we want just the
